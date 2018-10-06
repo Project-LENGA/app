@@ -1,0 +1,15 @@
+current directory: /Users/hinatsu/Projects/Business/Lenga/lenga.com/app/vendor/bundle/gems/bootsnap-1.3.2/ext/bootsnap
+/Users/hinatsu/.rbenv/versions/2.5.0/bin/ruby -r ./siteconf20181006-54408-1mslqvb.rb extconf.rb
+creating Makefile
+
+current directory: /Users/hinatsu/Projects/Business/Lenga/lenga.com/app/vendor/bundle/gems/bootsnap-1.3.2/ext/bootsnap
+make "DESTDIR=" clean
+
+current directory: /Users/hinatsu/Projects/Business/Lenga/lenga.com/app/vendor/bundle/gems/bootsnap-1.3.2/ext/bootsnap
+make "DESTDIR="
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.bundle
+
+current directory: /Users/hinatsu/Projects/Business/Lenga/lenga.com/app/vendor/bundle/gems/bootsnap-1.3.2/ext/bootsnap
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 bootsnap.bundle ./.gem.20181006-54408-hn16ld/bootsnap
