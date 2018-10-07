@@ -7,12 +7,27 @@
   height: 100%;
 
   &__head {
+    display: flex;
     padding: 1rem;
     background-color: $color-gray;
+
+    &__logo { }
+
+    &__tools {
+      display: flex;
+      margin-left: auto;
+
+      &__elem { }
+
+      &__elem + &__elem {
+        margin-left: 1rem;
+      }
+    }
   }
 
   &__body {
     flex: 1;
     padding: 0 3rem;
+    overflow: scroll;
   }
 }
