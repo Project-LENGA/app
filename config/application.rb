@@ -18,6 +18,7 @@ module App
 
     config.autoload_paths += Dir[Rails.root.join('app', 'models', 'users')]
     config.generators do |g|
+      g.helper false
       g.test_framework :rspec,
         fixtures: true,
         view_specs: false,
