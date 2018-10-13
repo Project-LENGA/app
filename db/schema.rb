@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_07_062037) do
+ActiveRecord::Schema.define(version: 2018_10_13_065757) do
 
   create_table "lessons", force: :cascade do |t|
     t.integer "tutor_id"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 2018_10_07_062037) do
     t.string "type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "time_zone", default: "Tokyo", null: false
   end
 
 end

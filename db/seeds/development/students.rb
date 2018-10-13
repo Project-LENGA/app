@@ -1,1 +1,5 @@
-Student.create(name: 'test student', email: 'test_student@example.com')
+Student.create(
+  name: 'test student',
+  email: 'test_student@example.com',
+  time_zone: 'Tokyo'
+)
