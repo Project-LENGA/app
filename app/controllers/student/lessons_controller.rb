@@ -15,7 +15,8 @@ class Student::LessonsController < Student::Base
   def create
     @lesson = Lesson.new(lesson_params)
     @lesson.student = current_student
-    @lesson.start_time = get_time_from_time_select_tag(params[:lesson], 'start_time')
+    start_time = get_time_from_time_select_tag(params[:lesson], 'start_time')
+    @lesson.start_time = start_time
     @lesson.end_time = get_time_from_time_select_tag(params[:lesson], 'end_time')
     if @lesson.save
       redirect_to tutors_path
