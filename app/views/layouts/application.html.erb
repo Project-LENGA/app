@@ -31,12 +31,14 @@
     <div class="top-container">
 
       <%= render 'shared/top_header' %>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
 
       <%= render 'shared/jumbotron' %>
 
       <div class="top-container__body">
+
+        <%= render 'shared/error' %>
+        <%= render 'shared/notice' %>
+
         <%= yield %>
       </div>
 
