@@ -1,0 +1,14 @@
+<div class="tutor-search-card">
+  <div class="tutor-search-card__avatar"></div>
+  <div class="tutor-search-card__body">
+    <p>
+      <%= tutor.name %> 
+    </p>
+    <p>
+      <%= tutor.email %> 
+    </p>
+  </div>
+  <div class="tutor-search-card__sub">
+    <%= link_to 'Reserve Lesson', new_student_lesson_path(tutor_id: tutor.id), class: 'btn btn-primary' %>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+@import "../includes/variables.scss";
+
+.lenga-ui-input-select {
+  position: relative;
+  padding: 1rem;
+  border: 1px solid $color-gray;
+  border-radius: .4rem;
+  background-color: $color-white;
+
+  span {
+    display: block;
+    color: $color-gray;
+  }
+
+  select {
+    width: 100%;
+  }
+}
+
+.lenga-ui-input-select-group {
+  display: flex;
+  justify-content: center;
+
+  .lenga-ui-input-select {
+    margin-left: 2rem;
+  }
+}
+
+.lenga-ui-input-select-group + .lenga-ui-input-select-group {
+  margin-top: 2rem;
+}
