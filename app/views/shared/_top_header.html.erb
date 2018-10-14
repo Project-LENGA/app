@@ -1,11 +1,27 @@
 <div class="top-container__head">
   <div class="top-container__head__logo">
-    <%= link_to 'Lenga', root_path %>
+    <%= link_to root_path do %>
+      <%= image_tag('lenga-logo.png') %>
+    <% end %>
   </div>
+
+  <div class="top-container__head__search">
+    <div class="input-group md-3">
+      <input type="text" class="form-control" placeholder="Let's find a tutor!">
+    </div>
+  </div>
+
   <div class="top-container__head__tools">
+    <div class="top-container__head__tools__elem">
+      <a href="#">
+        <%= image_tag('college-wiki-logo.png') %>
+      </a>
+    </div>
+
     <div class="top-container__head__tools__elem">
       <%= link_to 'Find tutors', tutors_path %>
     </div>
+
     <div class="top-container__head__tools__elem">
       <%= link_to 'Lessons', student_lessons_path %>
     </div>

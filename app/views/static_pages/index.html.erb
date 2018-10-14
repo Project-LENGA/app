@@ -1,4 +1,16 @@
-<h2>Landing page</h2>
+<%= content_for(:jumbotron) do %>
+  <div class="landing-page-jumbotron">
+    <h2>Study abroad?</h2>
+    <p>Then, ask them first</p>
+
+    <div class="input-group md-3">
+      <input class="form-control" type="text">
+      <div class="input-group-append">
+        <button class="btn btn-primary">Find Tutors</button>
+      </div>
+    </div>
+  </div>
+<% end %>
 
   <% if current_user %>
     <div>Hey <%= current_user.name %></div>

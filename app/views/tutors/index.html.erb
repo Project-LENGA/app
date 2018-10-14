@@ -1,21 +1,18 @@
-<h1>Tutors list</h1>
+<% content_for(:jumbotron) do %>
+  <%= render 'search_option' %>
+<% end %>
 
-<table style="width: 100%; border: 1px solid;">
-  <thead>
-    <tr>
-      <td>Name</td>
-      <td>Email</td>
-      <td>Reserve</td>
-    </tr>
-  </thead>
+<%= render 'search_sort' %>
 
-  <tbody>
-    <% @tutors.each do |t| %>
-      <tr>
-        <td> <%= t.name %> </td>
-        <td> <%= t.email %> </td>
-        <td> <%= link_to 'Reserve Lesson', new_student_lesson_path(tutor_id: t.id) %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="main-content">
+  <div class="tutors-search">
+
+    <%= render 'search_hit_description', count: @tutors.length %>
+
+    <div class="tutor-search-card-group">
+      <% @tutors.each do |t| %>
+        <%= render 'search_tutor_card', tutor: t %>
+      <% end %>
+    </div>
+  </div>
+</div>
