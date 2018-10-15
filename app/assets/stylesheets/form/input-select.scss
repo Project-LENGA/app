@@ -7,8 +7,8 @@
   border-radius: .4rem;
   background-color: $color-white;
 
-  span {
-    display: block;
+  p {
+    margin: 0;
     color: $color-gray;
   }
 
@@ -27,5 +27,5 @@
 }
 
 .lenga-ui-input-select-group + .lenga-ui-input-select-group {
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
