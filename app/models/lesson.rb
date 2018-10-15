@@ -5,6 +5,10 @@ class Lesson < ApplicationRecord
   validates :start_time, :end_time, :lesson_date, presence: true
   validate :start_time_is_earlier_than_end_time
 
+  def attendee?(user)
+    tutor == user || student == user
+  end
+
   private
     def start_time_is_earlier_than_end_time
       if start_time.present? && end_time.present?
