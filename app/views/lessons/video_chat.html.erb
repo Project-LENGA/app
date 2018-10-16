@@ -1,6 +1,35 @@
+<%= javascript_pack_tag 'lessons/video_chat' %>
+
 <h2>video chat will be here</h2>
 
 <p>well come <%= @current_student.name %></p>
-<p>
-  <%= @lesson.to_yaml %>
-</p>
+
+<div>
+
+    <!-- Video area -->
+    <div id="video-container">
+        <video id="their-video" autoplay></video>
+        <video id="my-video" autoplay></video>
+    </div>
+
+    <!-- Steps -->
+    <div>
+        <h2>SkyWay Video Chat</h2>
+
+        <p>Your id: <span id="my-id">...</span></p>
+        <p>Share this id with others so they can call you.</p>
+        <h3>Make a call</h3>
+        <form id="make-call">
+            <input type="text" placeholder="Call user id..." id="callto-id">
+            <button href="#" type="submit">Call</button>
+        </form>
+        <form id="end-call">
+            <p>Currently in call with <span id="their-id">...</span></p>
+            <button href="#" type="submit">End Call</button>
+        </form>
+    </div>
+</div>
+
+<script>
+  lenga.videoChat.initVideoChat();
+</script>
