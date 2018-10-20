@@ -1,3 +1,125 @@
-// Place all the styles related to the lessons controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import './includes/variables.scss';
+@import './includes/mixins.scss';
+
+.lesson-room {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background-color: $color-black;
+
+  &__header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: .4rem 1rem;
+    background-color: $color-blue;
+    color: $color-white;
+
+    .opponent-name {
+      font-size: 1.5rem;
+      width: 300px;
+    }
+
+    .time {
+      font-size: 1.2rem;
+      &__remaining {
+        font-size: 1.5rem;
+      }
+    }
+
+    button.exit {
+      margin-left: auto;
+    }
+  }
+
+  &__body {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+
+    &__video {
+      display: flex;
+      flex-direction: column;
+
+      // mock
+      width: 600px;
+
+      &__box {
+        flex: 1;
+
+        // mock
+        background-color: grey;
+      }
+    }
+
+    &__side {
+      display: flex;
+      flex-direction: column;
+      max-width: 600px;
+      padding: .5rem;
+      background-color: $color-light-gray;
+
+      &__box {
+        padding: 1rem;
+        background-color: $color-white;
+        border-radius: .4rem;
+
+        &__elem { }
+
+        &__elem + &__elem {
+          margin-top: .4rem;
+        }
+      }
+
+      &__box + &__box {
+        margin-top: .5rem;
+      }
+    }
+
+    &__video + &__side {
+    }
+  }
+}
+
+.video-control {
+  display: flex;
+  justify-content: center;
+  padding: .2rem 0;
+
+  &__box {
+    &__buttons {
+      display: flex;
+      justify-content: center;
+      padding: .2rem 0;
+      .mdi {
+        @extend %clickable;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        background-color: $color-dark-black;
+        color: $color-white;
+        font-size: 24px;
+      }
+      .mdi + .mdi {
+        margin-left: 2rem;
+      }
+    }
+
+    &__border {
+      border-bottom: 1px solid $color-gray;
+    }
+
+    &__title {
+      color: $color-gray;
+      text-align: center;
+    }
+  }
+
+  &__box + &__box {
+    margin-left: 2rem;
+  }
+}

@@ -1,19 +1,74 @@
 <%= javascript_pack_tag 'lessons/video_chat' %>
 
-<h2>video chat will be here</h2>
+<div class="lesson-room">
+  <div class="lesson-room__header">
+    <span class="opponent-name">Mr. BuckyBadger</span>
+    <span class="time">
+      Time remaining
+      <span class="time__remaining">
+        23:30
+      </span>
+    </span>
+    <button class="btn btn-secondary exit">Exit ></button>
+  </div>
 
-<p>well come <%= @current_student.name %></p>
-
-<div>
-
-    <!-- Video area -->
-    <div id="video-container">
+  <div class="lesson-room__body">
+    <div class="lesson-room__body__video">
+      <div class="lesson-room__body__video__box">
         <video id="their-video" autoplay></video>
+      </div>
+      <div class="video-control">
+        <div class="video-control__box">
+          <div class="video-control__box__buttons">
+            <i class="mdi mdi-video"></i>
+            <i class="mdi mdi-volume-high"></i>
+          </div>
+          <div class="video-control__box__border"></div>
+          <p class="video-control__box__title">
+            Tutor
+          </p>
+        </div>
+        <div class="video-control__box">
+          <div class="video-control__box__buttons">
+            <i class="mdi mdi-video"></i>
+            <i class="mdi mdi-volume-high"></i>
+          </div>
+          <div class="video-control__box__border"></div>
+          <p class="video-control__box__title">
+            Me
+          </p>
+        </div>
+        <div class="video-control__box">
+          <div class="video-control__box__buttons">
+            <i class="mdi mdi-cached"></i>
+          </div>
+          <p class="video-control__box__title">
+            Refresh
+          </p>
+        </div>
+      </div>
+      <div class="lesson-room__body__video__box">
         <video id="my-video" autoplay></video>
+      </div>
     </div>
 
-    <!-- Steps -->
-    <div>
+    <div class="lesson-room__body__side">
+
+      <div class="lesson-room__body__side__box">
+
+        <div class="lesson-room__body__side__box__elem">
+          <%= render 'shared/users/profile_card', user: @partner %>
+        </div>
+        <div class="lesson-room__body__side__box__elem">
+          <%= render 'shared/users/profile_box' %>
+        </div>
+        <div class="lesson-room__body__side__box__elem">
+          <h4>Topics</h4>
+          <%= render 'shared/users/topics' %>
+        </div>
+      </div>
+
+      <div class="lesson-room__body__side__box">
         <h2>SkyWay Video Chat</h2>
 
         <p>Your id: <span id="my-id">...</span></p>
@@ -27,9 +82,14 @@
             <p>Currently in call with <span id="their-id">...</span></p>
             <button href="#" type="submit">End Call</button>
         </form>
+
+
+      </div>
     </div>
+  </div>
+
 </div>
 
 <script>
-  lenga.videoChat.initVideoChat();
+  // lenga.videoChat.initVideoChat();
 </script>

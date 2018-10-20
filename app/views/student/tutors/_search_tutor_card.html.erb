@@ -1,14 +1,39 @@
-<div class="tutor-search-card">
-  <div class="tutor-search-card__avatar"></div>
-  <div class="tutor-search-card__body">
-    <p>
-      <%= tutor.name %> 
-    </p>
-    <p>
-      <%= tutor.email %> 
-    </p>
+<div class="user-card">
+
+  <div class="user-profile-card__avatar"></div>
+
+  <div class="user-card__body">
+    <div class="user-card__body__box">
+      <div class="user-profile-card">
+        <div class="user-profile-card__content">
+          <p class="user-profile-card__content__name">
+            <%= tutor.name %>
+          </p>
+          <p class="user-profile-card__content__school-name">UNIVERSITY OF WISCONSIN-MADISON</p>
+          <p class="user-profile-card__content__description">Public school</p>
+        </div>
+      </div>
+
+      <div class="user-profile-box">
+        <p class="user-profile-box__title">MASTER'S STUDENT</p>
+        <p class="user-profile-box__description">EDUCATIONAL LEADERSHIP &amp; POLICY ANALYSIS</p>
+      </div>
+    </div>
+
+    <div class="user-card__body__box">
+      <%= render 'shared/users/topics' %>
+    </div>
+
+    <div class="user-card__body__box">
+      <p class="user-profile-box__description">
+        Lorem est est nam tempore vero Laborum mollitia dolores sit libero assumenda.<br>
+        Corrupti aliquam blanditiis laboriosam iste a?
+      </p>
+    </div>
+
   </div>
-  <div class="tutor-search-card__sub">
+
+  <div>
     <%= link_to 'Reserve Lesson', new_student_lesson_path(tutor_id: tutor.id), class: 'btn btn-primary' %>
   </div>
 </div>

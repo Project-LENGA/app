@@ -23,29 +23,3 @@
     font-size: 2rem;
   }
 }
-
-.tutor-search-card {
-  display: flex;
-  padding: 1rem;
-  background-color: $color-white;
-  box-shadow: 0px 2px 4px rgba(0,0,0,.4);
-
-  &__avatar {
-    width: 150px;
-    height: 150px;
-    background-color: $color-gray;
-  }
-
-  &__body {
-    flex: 1;
-  }
-
-  &__sub {
-  }
-}
-
-.tutor-search-card-group {
-  .tutor-search-card + .tutor-search-card {
-    margin-top: 1rem;
-  }
-}

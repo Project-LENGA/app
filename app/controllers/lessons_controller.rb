@@ -3,6 +3,8 @@ class LessonsController < ApplicationController
   before_action :should_be_attendee, only: [:video_chat]
 
   def video_chat
+    # mock. later should identify the partner
+    @partner = Tutor.first
   end
 
   private

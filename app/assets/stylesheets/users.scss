@@ -1,3 +1,76 @@
-// Place all the styles related to the Users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import './includes/variables.scss';
+
+.user-profile-card {
+  display: flex;
+
+  &__avatar {
+    width: 8rem;
+    height: 8rem;
+
+    // mock
+    background-color: grey
+  }
+
+  &__content {
+    &__name {
+      font-size: 1.2rem;
+    }
+    &__school-name {
+      font-weight: 500;
+    }
+    &__description {
+    }
+  }
+
+  &__avatar + &__content {
+    margin-left: 1rem;
+  }
+}
+
+.user-profile-box {
+  p { margin: 0; }
+  &__title {
+    color: $color-gray;
+  }
+  &__description {
+
+  }
+
+  &__description + &__description {
+    margin-top: .6rem;
+  }
+}
+
+.user-card {
+  display: flex;
+  padding: 1rem;
+  background-color: $color-white;
+  box-shadow: 0px 2px 4px rgba(0,0,0,.4);
+
+  &__body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem;
+
+    &__box {
+      display: flex;
+    }
+
+    &__box + &__box {
+      margin-top: .4rem;
+    }
+  }
+
+  .user-profile-card, .user-profile-box {
+    flex: 1;
+  }
+}
+
+.user-card-container {
+  display: flex;
+  flex-direction: column;
+  .user-card + .user-card {
+    margin-top: 1rem;
+  }
+}
