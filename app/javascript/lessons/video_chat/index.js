@@ -1,7 +1,29 @@
 import Peer from 'skyway-js';
 import $ from 'jquery';
+import ActionCable from 'actioncable';
 
-export const initVideoChat = () => {
+export const initVideoChat = ({
+  skywayApiKey,
+  lessonId
+}) => {
+  const cable = ActionCable.createConsumer();
+  cable.subscriptions.create({
+    channel: 'VideoChatChannel',
+    lesson_id: lessonId,
+  }, {
+    connected: () => {
+
+    },
+    disconnected: () => {
+
+    },
+    received: data => {
+      console.log(data);
+      const message = $('<p></p>').text(data.message);
+      $('#dev-logs').append(message);
+    },
+  });
+
   let localStream = null;
   let peer = null;
   let existingCall = null;
@@ -16,8 +38,7 @@ export const initVideoChat = () => {
       });
 
   peer = new Peer({
-    // api-key should be extracted to somewhere
-    key: '6ca26165-2bf6-40c6-b076-cf0e738fdb1c',
+    key: skywayApiKey,
     debug: 3
   });
 
