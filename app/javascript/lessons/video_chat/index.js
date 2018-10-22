@@ -107,4 +107,11 @@ export const initVideoChat = ({
       $('#make-call').hide();
       $('#end-call').show();
   }
+
+  // Need to clean up when turbolinks makes page refresh.
+  // Should remove video and audio media
+  document.addEventListener("turbolinks:click", function(){
+    const tracks = localStream.getTracks();
+    tracks.forEach(t => t.stop());
+  });
 }
