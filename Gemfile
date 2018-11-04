@@ -21,6 +21,8 @@ gem 'jquery-rails'
 
 # gem 'capistrano-rails', group: :development
 
+gem "loofah", ">= 2.2.3"
+
 gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'webpacker', '~> 3.5'
