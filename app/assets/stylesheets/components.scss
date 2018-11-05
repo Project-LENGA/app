@@ -1,3 +1,23 @@
+@import './includes/variables.scss';
+@import './includes/mixins.scss';
+
 .main-content {
   padding: 0 10rem;
+}
+
+.topic-crumb {
+  @extend %clickable;
+  display: inline-box;
+  padding: .2rem;
+  border: 1px solid $color-blue;
+  border-radius: .2rem;
+  font-size: .8rem;
+  color: $color-blue;
+}
+.topic-crumb-container {
+  display: flex;
+  flex-wrap: wrap;
+  .topic-crumb {
+    margin: 0 .4rem .4rem 0;
+  }
 }

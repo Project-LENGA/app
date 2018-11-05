@@ -9,7 +9,7 @@
 
     <%= render 'search_hit_description', count: @tutors.length %>
 
-    <div class="tutor-search-card-group">
+    <div class="user-card-container">
       <% @tutors.each do |t| %>
         <%= render 'search_tutor_card', tutor: t %>
       <% end %>
