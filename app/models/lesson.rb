@@ -6,7 +6,7 @@ class Lesson < ApplicationRecord
   validate :start_time_is_earlier_than_end_time
 
   def attendee?(user)
-    tutor == user || student == user
+    user == tutor || user == student
   end
 
   private
