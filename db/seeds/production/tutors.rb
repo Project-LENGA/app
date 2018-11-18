@@ -5,6 +5,7 @@ names = %w(John Smith Bruno Mars )
   Tutor.create(
     name: "#{name}_#{n}",
     password: "password",
-    email: "test_tutor_#{name}#{n}@example.com"
+    email: "test_tutor_#{name}#{n}@example.com",
+    image: Faker::Avatar.image,
   )
 end
