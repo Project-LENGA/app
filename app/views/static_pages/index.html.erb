@@ -3,12 +3,16 @@
     <h2>Study abroad?</h2>
     <p>Then, ask them first</p>
 
-    <div class="input-group md-3">
-      <input class="form-control" type="text">
-      <div class="input-group-append">
-        <button class="btn btn-primary">Find Tutors</button>
+    <%= form_tag '/student/tutors', method: :get do %>
+      <div class="input-group md-3">
+        <input class="form-control" type="text" placeholder="What do you want to know?">
+        <div class="input-group-append">
+          <button class="btn btn-primary" type="submit">
+            Find Tutors
+          </button>
+        </div>
       </div>
-    </div>
+    <% end %>
   </div>
 <% end %>
 
