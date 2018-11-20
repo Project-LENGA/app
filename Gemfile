@@ -63,3 +63,4 @@ gem 'omniauth-facebook'
 gem 'material_design_icons'
 
 gem 'dotenv-rails'
+gem 'annotate'
