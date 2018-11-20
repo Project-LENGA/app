@@ -36,6 +36,9 @@ class User < ApplicationRecord
   has_one :student
   has_one :tutor
 
+  scope :students, -> { where(student_activated: true) }
+  scope :tutors, -> { where(tutor_activated: true) }
+
   def self.new_with_session(params, session)
     super.tap do |user|
       if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
