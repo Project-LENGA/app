@@ -13,8 +13,8 @@
 #
 
 class Lesson < ApplicationRecord
-  belongs_to :student, class_name: 'User', foreign_key: 'student_id'
-  belongs_to :tutor, class_name: 'User', foreign_key: 'tutor_id'
+  belongs_to :student
+  belongs_to :tutor
 
   validates :start_time, :end_time, :lesson_date, presence: true
   validate :start_time_is_earlier_than_end_time
