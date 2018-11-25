@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: lessons
+#
+#  id          :integer          not null, primary key
+#  tutor_id    :integer
+#  student_id  :integer
+#  start_time  :time             not null
+#  end_time    :time             not null
+#  lesson_date :date             not null
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
 require 'rails_helper'
 
 RSpec.describe Lesson, type: :model do
