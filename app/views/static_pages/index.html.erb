@@ -3,14 +3,66 @@
     <h2>Study abroad?</h2>
     <p>Then, ask them first</p>
 
-    <div class="input-group md-3">
-      <input class="form-control" type="text">
-      <div class="input-group-append">
-        <button class="btn btn-primary">Find Tutors</button>
+    <%= form_tag '/student/tutors', method: :get do %>
+      <div class="input-group md-3">
+        <input class="form-control" type="text" placeholder="What do you want to know?">
+        <div class="input-group-append">
+          <button class="btn btn-primary" type="submit">
+            Find Tutors
+          </button>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+
+<div class="landing-page-body">
+  <div class="main-content">
+
+    <div class="search-category-table">
+
+      <div class="search-category-table__head">
+        <div class="search-category-table__head__elem">Major</div>
+        <div class="search-category-table__head__elem">Place</div>
+        <div class="search-category-table__head__elem">Cost</div>
+        <div class="search-category-table__head__elem">All schools</div>
+      </div>
+
+      <div class="search-category-table__body">
+        <div class="search-category-table__body__row">
+          <div class="search-category-table__body__row__elem">Accounting</div>
+          <div class="search-category-table__body__row__elem">Associate of Science</div>
+          <div class="search-category-table__body__row__elem">Biology</div>
+          <div class="search-category-table__body__row__elem">Chemistry</div>
+        </div>
+        <div class="search-category-table__body__row">
+          <div class="search-category-table__body__row__elem">Computer Science</div>
+          <div class="search-category-table__body__row__elem">Economics</div>
+          <div class="search-category-table__body__row__elem">Education</div>
+          <div class="search-category-table__body__row__elem">Engineering</div>
+        </div>
+        <div class="search-category-table__body__row">
+          <div class="search-category-table__body__row__elem">Finnancial Planner</div>
+          <div class="search-category-table__body__row__elem">Geology</div>
+          <div class="search-category-table__body__row__elem">Graphic Design</div>
+          <div class="search-category-table__body__row__elem">History</div>
+        </div>
+        <div class="search-category-table__body__row">
+          <div class="search-category-table__body__row__elem">International Business</div>
+          <div class="search-category-table__body__row__elem">Jewelry and MetalSmithing</div>
+          <div class="search-category-table__body__row__elem">Marketing Management</div>
+          <div class="search-category-table__body__row__elem">Music</div>
+        </div>
+        <div class="search-category-table__body__row">
+          <div class="search-category-table__body__row__elem">Political Science</div>
+          <div class="search-category-table__body__row__elem">Printmaking</div>
+          <div class="search-category-table__body__row__elem">Social Sciences</div>
+          <div class="search-category-table__body__row__elem">Theatre Arts</div>
+        </div>
       </div>
     </div>
   </div>
-<% end %>
+</div>
 
 <% if current_user %>
   <div>Hey <%= current_user.name %></div>
@@ -21,7 +73,3 @@
 <% else %>
   <%= link_to "Logout", destroy_user_session_path, method: :delete %>
 <% end %>
-
-<p>
-  <%= link_to 'Go find tutors', student_tutors_path %>
-</p>

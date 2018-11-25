@@ -21,3 +21,39 @@
     margin: 0 .4rem .4rem 0;
   }
 }
+
+.search-category-table {
+  width: 100%;
+  background-color: $color-white;
+  border-radius: 2rem;
+  overflow: hidden;
+
+  &__head {
+    display: flex;
+    justify-content: center;
+
+    &__elem {
+      @extend %clickable-on-white;
+      padding: 2rem 4rem;
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+
+    &__row {
+      display: flex;
+
+      &__elem {
+        @extend %clickable-on-white;
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 6rem;
+        border: 1px solid $color-light-gray;
+      }
+    }
+  }
+}

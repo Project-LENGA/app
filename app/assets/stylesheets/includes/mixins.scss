@@ -4,3 +4,11 @@
     opacity: .8;
   }
 }
+
+%clickable-on-white {
+  &:hover {
+    cursor: pointer;
+    background-color: #f5f5f5;
+    transition: background-color .25s ease-in-out;
+  }
+}

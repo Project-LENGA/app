@@ -61,6 +61,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem 'omniauth-facebook'
 gem 'material_design_icons'
-
 gem 'dotenv-rails'
 gem 'annotate'
+gem 'faker'
