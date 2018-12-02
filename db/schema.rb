@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_20_152837) do
+ActiveRecord::Schema.define(version: 2018_12_02_142237) do
 
   create_table "lessons", force: :cascade do |t|
     t.integer "tutor_id"
@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 2018_11_20_152837) do
     t.string "time_zone", default: "Tokyo", null: false
     t.boolean "student_activated", default: false
     t.boolean "tutor_activated", default: false
+    t.string "password_digest"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
