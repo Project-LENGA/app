@@ -1,3 +1,29 @@
-<% @lesson_dates_options.each do |option| %>
-  <%= render 'date_opts', date_option: option %>
-<% end %>
+<div class="body-standalone">
+  <div id="tutor-profile">
+    <div class="row">
+      <div class="col-2 tutor-profile__avatar">
+
+      </div>
+      <div class="col-4 tutor-profile__basic-info">
+
+      </div>
+      <div class="col-4">
+
+      </div>
+      <div class="col-2">
+      
+      </div>
+    </div>
+  </div>
+
+  <div class="date-options">
+    <div class="date-option">
+      <% @lesson_dates_options.each do |option| %>
+        <%= render 'date_opts', date_option: option %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+

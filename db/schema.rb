@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_01_114743) do
+ActiveRecord::Schema.define(version: 2018_12_02_073305) do
 
   create_table "lesson_dates_options", force: :cascade do |t|
     t.boolean "is_reserved"
@@ -20,6 +20,9 @@ ActiveRecord::Schema.define(version: 2018_12_01_114743) do
     t.integer "student_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.date "lesson_date"
+    t.time "lesson_time"
+    t.integer "lesson_duration"
     t.index ["student_id"], name: "index_lesson_dates_options_on_student_id"
     t.index ["tutor_id"], name: "index_lesson_dates_options_on_tutor_id"
   end
