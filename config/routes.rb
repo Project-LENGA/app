@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   namespace :student do
     resources :tutors
     resources :lessons
+    resources :lesson_dates_options
   end
 
   resources :lessons do

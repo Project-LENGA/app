@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_05_115255) do
+ActiveRecord::Schema.define(version: 2018_12_01_114743) do
+
+  create_table "lesson_dates_options", force: :cascade do |t|
+    t.boolean "is_reserved"
+    t.boolean "is_accepted"
+    t.date "date_accepted"
+    t.integer "tutor_id"
+    t.integer "student_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["student_id"], name: "index_lesson_dates_options_on_student_id"
+    t.index ["tutor_id"], name: "index_lesson_dates_options_on_tutor_id"
+  end
 
   create_table "lessons", force: :cascade do |t|
     t.integer "tutor_id"
@@ -28,16 +40,19 @@ ActiveRecord::Schema.define(version: 2018_11_05_115255) do
   create_table "students", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_students_on_user_id"
   end
 
   create_table "tutors", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_tutors_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
     t.string "name", null: false
-    t.string "type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "email", default: "", null: false
