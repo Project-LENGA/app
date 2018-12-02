@@ -49,28 +49,35 @@
         </div>
       </div> <!-- .col-2 -->
     </div> <!-- .row -->
+    <hr>
     <div class="row">
       <div class="col-12 tutor-about-title">
-        About the tutor
+        <h3>About the tutor</h3>
       </div>
       <div class="col-12 tutor-about-content">
-        Content comes here!!
+        <h4>I graduated from Harvard Unversity.</h4>
       </div>
     </div>
+    <hr>
     <div class="row">
+      <h3>TOPICS</h3>
       <div class="col-12" id="topics">
-        <div class="topic">TOPIC</div>
+        <span class="topic">CAMPUS LIFE</span>
+        <span class="topic">COURSE DETAILS</span>
+        <span class="topic">PLACE TO LIVE</span>
+        <span class="topic">STUDYING ABROAD AGENTS</span>
+        <span class="topic">ESSAYS</span>
       </div>
     </div>
+    <hr>
     <div class="row">
+      <h3>Schedule</h3>
       <div class="col-12 date-options-tip">
         Choose the time for your first session. The timings are displayed in your local time zone.
       </div>
       <div class="col-12 date-options">
         <% @lesson_dates_options.reverse_each do |option| %>
-          <div class="date-option btn btn-light" data-toggle="modal" data-target="#modal-confirm">
-            <%= render 'date_opts', date_option: option %>
-          </div>
+          <%= render 'date_opts', date_option: option %>
         <% end %>
       </div> <!-- .col-12.date-option -->
     </div> <!-- .row -->

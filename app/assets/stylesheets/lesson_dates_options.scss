@@ -1,3 +1,33 @@
 // Place all the styles related to the LessonDatesOptions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#tutor-profile {
+  width: 83% !important;
+  margin: 20px auto;
+  background-color: white !important;
+
+  hr {
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  h3 {
+    font-weight: 500;
+  }
+
+  .row {
+    width: 90%;
+    margin: 10px auto;
+
+    #topics {
+      display: flex;
+      .topic {
+        flex: auto;
+        border: thin solid black;
+        text-align: center;
+        margin: 0 3px;
+      }
+    }
+  }
+}

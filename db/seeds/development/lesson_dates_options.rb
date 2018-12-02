@@ -1,9 +1,9 @@
 student = User.students.first.student
 tutors = User.tutors.take(3).map(&:tutor)
- 10.times do |n|
+10.times do |n|
   tutor = tutors.sample
   ldo = LessonDatesOption.new
-   ldo[:is_reserved] = [true, false].sample
+  ldo[:is_reserved] = [true, false].sample
   ldo[:is_accepted] = [true, false].sample
   ldo[:date_accepted] = Date.today - rand(2..8)
   ldo[:lesson_date] = Date.today + rand(2..8)
@@ -11,5 +11,5 @@ tutors = User.tutors.take(3).map(&:tutor)
   ldo[:lesson_duration] = [15, 30].sample
   ldo.student = student
   ldo.tutor = tutor
-   ldo.save!
+  ldo.save!
 end
