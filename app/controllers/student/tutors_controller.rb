@@ -1,5 +1,5 @@
 class Student::TutorsController < Student::Base
   def index
-    @tutors = Tutor.all
+    @tutors = User.tutors
   end
 end

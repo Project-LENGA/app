@@ -1,19 +1,18 @@
 <div class="body-standalone"></div>
   <h2>My lessons</h2>
 
-  <% @lessons.each do |l| %>
-    <div style="padding: 1rem; margin-bottom: 1rem; border: 1px solid;">
-      <h4>Lesson</h4>
-      <p>
-        with: <%= l.tutor.name %>
-      </p>
-      <p>
-        <span>Date: <%= l.lesson_date %></span>
-      </p>
-      <p>
-        <span>Starts at: <%= l.start_time %></span>
-        <span style="margin-left: 1rem;">Ends at: <%= l.end_time %></span>
-      </p>
-    </div>
-  <% end %>
-</div>
+<% @lessons.each do |l| %>
+  <div style="padding: 1rem; margin-bottom: 1rem; border: 1px solid;">
+    <h4>Lesson</h4>
+    <p>
+      with: <%= l.tutor.user.name %>
+    </p>
+    <p>
+      <span>Date: <%= l.lesson_date %></span>
+    </p>
+    <p>
+      <span>Starts at: <%= l.start_time %></span>
+      <span style="margin-left: 1rem;">Ends at: <%= l.end_time %></span>
+    </p>
+  </div>
+<% end %>

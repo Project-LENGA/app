@@ -1,3 +1,29 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id                     :integer          not null, primary key
+#  name                   :string           not null
+#  created_at             :datetime         not null
+#  updated_at             :datetime         not null
+#  email                  :string           default(""), not null
+#  encrypted_password     :string           default(""), not null
+#  reset_password_token   :string
+#  reset_password_sent_at :datetime
+#  remember_created_at    :datetime
+#  sign_in_count          :integer          default(0), not null
+#  current_sign_in_at     :datetime
+#  last_sign_in_at        :datetime
+#  current_sign_in_ip     :string
+#  last_sign_in_ip        :string
+#  provider               :string
+#  uid                    :string
+#  image                  :text
+#  time_zone              :string           default("Tokyo"), not null
+#  student_activated      :boolean          default(FALSE)
+#  tutor_activated        :boolean          default(FALSE)
+#
+
 class User < ApplicationRecord
   validates :time_zone, inclusion: { in: ActiveSupport::TimeZone.all.map(&:name) }
 
@@ -6,6 +32,12 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, :omniauth_providers => [:facebook]
+
+  has_one :student
+  has_one :tutor
+
+  scope :students, -> { where(student_activated: true) }
+  scope :tutors, -> { where(tutor_activated: true) }
 
   def self.new_with_session(params, session)
     super.tap do |user|
