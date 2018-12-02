@@ -2,28 +2,99 @@
   <div id="tutor-profile">
     <div class="row">
       <div class="col-2 tutor-profile__avatar">
-
+        <%= @tutor.user.image %>
       </div>
       <div class="col-4 tutor-profile__basic-info">
-
+        <div class="row">
+          <div class="col-12" id="tutor-name">
+            <%= @tutor.user.name %>
+          </div>
+          <div class="col-12" id="univ">
+            <div id="univ-name"></div>
+              <span>University of Wisconsin at Madison</span>
+            <div id="univ-type">
+              PUBLIC SCHOOL
+            </div>
+          </div>
+          <div id="tutor-age">
+            21 years old
+          </div>
+          <div id="tutor-gender">
+            F
+          </div>
+        </div>
       </div>
-      <div class="col-4">
-
+      <div class="col-4 tutor-profile__basic-info">
+        <div class="row">
+          <div class="col-12 degree">
+            MASTER'S STUDENT
+          </div>
+        </div>
+        <div class="col-12 program">
+          EDUCATIONAL LEADERSHIP & POLICY ANALYSIS
+        </div>
+        <div class="row">
+          <div class="col-6" id="num-sessions">
+            30 session
+          </div>
+          <div class="col-6" id="lang-options">
+            <div class="lang-option">Japanese/English</div>
+          </div> <!-- #lang-options -->
+        </div> <!-- .row -->
+      </div> <!-- .col-4.tutor-profile__basic-info -->
+      <div class="col-2 tutor-profile__basic-info">
+        <div class="row">
+          <div class="col-6" id="rating">4.7</div>
+          <div class="col-6" id="price">$30/h</div>
+        </div>
+      </div> <!-- .col-2 -->
+    </div> <!-- .row -->
+    <div class="row">
+      <div class="col-12 tutor-about-title">
+        About the tutor
       </div>
-      <div class="col-2">
-      
+      <div class="col-12 tutor-about-content">
+        Content comes here!!
       </div>
     </div>
-  </div>
-
-  <div class="date-options">
-    <div class="date-option">
-      <% @lesson_dates_options.each do |option| %>
-        <%= render 'date_opts', date_option: option %>
-      <% end %>
+    <div class="row">
+      <div class="col-12" id="topics">
+        <div class="topic">TOPIC</div>
+      </div>
     </div>
+    <div class="row">
+      <div class="col-12 date-options-tip">
+        Choose the time for your first session. The timings are displayed in your local time zone.
+      </div>
+      <div class="col-12 date-options">
+        <% @lesson_dates_options.reverse_each do |option| %>
+          <div class="date-option btn btn-light" data-toggle="modal" data-target="#modal-confirm">
+            <%= render 'date_opts', date_option: option %>
+          </div>
+        <% end %>
+      </div> <!-- .col-12.date-option -->
+    </div> <!-- .row -->
+  </div> <!-- #tutor-profile -->
+</div> <!-- .body-standalone -->
+
+<!-- Modal -->
+<div id="modal-confirm" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Do you want to book a session at this time?</h4>
+      </div>
+      <div class="modal-body">
+        <p>hahahahaha</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
   </div>
 </div>
-
-
 
