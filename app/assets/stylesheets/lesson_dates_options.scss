@@ -2,10 +2,17 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import "./includes/variables";
+
 #tutor-profile {
-  width: 83% !important;
+  width: 90% !important;
   margin: 20px auto;
   background-color: white !important;
+  padding-bottom: 15px;
+
+  ion-icon {
+    padding-top: 5px;
+  }
 
   hr {
     width: 95%;
@@ -14,20 +21,82 @@
 
   h3 {
     font-weight: 500;
+    font-size: 1.4rem;
+  }
+
+  h4 {
+    font-weight: 200;
+    font-size: 1rem;
   }
 
   .row {
     width: 90%;
     margin: 10px auto;
 
+    .basic-info {
+      padding: 10px 3px;
+      .row {
+        #tutor {
+          &-univ {
+            &-name {
+              font-size: 1.3rem;
+              font-weight: 500;
+              line-height: 25px;
+            } // &-name
+            
+            &-type {
+              margin-top: 10px;
+              font-size: 0.8rem;
+            } // &-type
+          } // &-univ
+
+          &-age, &-gender {
+            font-size: 0.8rem;
+          } // &-age, &-gender
+
+          &-degree-program {
+            margin-top: 45px;
+            font-size: 1rem;
+          } // &-degree
+        } // #tutor
+        #rating, #price {
+          margin: 20px 0;
+        } // #rating, #price
+      } // .row
+    } // .basic-info
+
+    #tutor-avatar {
+      background-color: grey;
+      width: 120px;
+      height: 120px;
+      margin-top: 20px;
+      padding: 0;
+    } // #tutor-avatar
+
     #topics {
       display: flex;
       .topic {
         flex: auto;
         border: thin solid black;
+        border-color: $l-navy;
+        border-radius: 4px;
+        padding: 5px;
+        color: $l-navy;
         text-align: center;
-        margin: 0 3px;
+        margin: 10px 3px;
+      } // .topic
+    } // #topics
+    #date-options-tip {
+      background-color: $color-light-gray;
+      h6 {
+        margin-bottom: 0;
+        padding: 5px 0;
       }
+
     }
-  }
-}
+    .date-option {
+      margin-top: 10px;
+      border-top: 3px solid $l-navy;
+    }
+  } // .row
+} // #tutor-profile

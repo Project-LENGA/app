@@ -1,37 +1,37 @@
 <div class="body-standalone">
   <div id="tutor-profile">
     <div class="row">
-      <div class="col-2 tutor-profile__avatar">
-        <%= @tutor.user.image %>
+      <div class="col-2">
+        <div id="tutor-avatar">
+          <%= @tutor.user.image %>
+        </div>
       </div>
-      <div class="col-4 tutor-profile__basic-info">
+      <div class="col-4 basic-info">
         <div class="row">
           <div class="col-12" id="tutor-name">
-            <%= @tutor.user.name %>
+            <h3><%= @tutor.user.name %></h3>
           </div>
-          <div class="col-12" id="univ">
-            <div id="univ-name"></div>
-              <span>University of Wisconsin at Madison</span>
-            <div id="univ-type">
-              PUBLIC SCHOOL
-            </div>
+          <div class="col-12" id="tutor-univ">
+            <div id="tutor-univ-name">&nbsp
+              <ion-icon name="school"></ion-icon>
+              Harvard University</div>
+            <div id="tutor-univ-type">&nbsp Private School</div>
           </div>
-          <div id="tutor-age">
-            21 years old
+          <div class="col-12">
+            <span id="tutor-age">&nbsp 21 years old</span>
           </div>
-          <div id="tutor-gender">
-            F
+          <div class="col-12">&nbsp
+            <ion-icon name="woman"></ion-icon>
+            <span id="tutor-gender">Female</span>
           </div>
         </div>
       </div>
-      <div class="col-4 tutor-profile__basic-info">
+      <div class="col-4 basic-info">
         <div class="row">
-          <div class="col-12 degree">
-            MASTER'S STUDENT
+          <div class="col-12" id="tutor-degree-program">
+            <h4 class="text-muted">Master's Student</h4>
+            <h4>Educational Leadership & Policy Analysis</h4>
           </div>
-        </div>
-        <div class="col-12 program">
-          EDUCATIONAL LEADERSHIP & POLICY ANALYSIS
         </div>
         <div class="row">
           <div class="col-6" id="num-sessions">
@@ -42,25 +42,38 @@
           </div> <!-- #lang-options -->
         </div> <!-- .row -->
       </div> <!-- .col-4.tutor-profile__basic-info -->
-      <div class="col-2 tutor-profile__basic-info">
+      <div class="col-2 basic-info">
         <div class="row">
-          <div class="col-6" id="rating">4.7</div>
-          <div class="col-6" id="price">$30/h</div>
+          <div class="col-6" id="rating">
+            <div class="text-center" id="rating-title">Rating</div>
+            <div class="text-center" id="rating-stars"><ion-icon name="star-outline"></ion-icon>4.7</div>
+          </div> <!-- #rating -->
+          <div class="col-6" id="price">
+            <div class="text-center" id="price-title">Price</div>
+            <div class="text-center">
+              <span id="price-currency">$</span>
+              <span id="price-value">30</span>
+              <span id="price-duration">/ h</span>
+            </div> <!-- .text-center -->
+          </div> <!-- #price -->
+        </div> <!-- .row -->
+        <div class="row">
+          <div class="col-12">
+            <button class="btn btn-primary" id="book">Book Session</button>
+          </div>
         </div>
       </div> <!-- .col-2 -->
     </div> <!-- .row -->
     <hr>
     <div class="row">
-      <div class="col-12 tutor-about-title">
-        <h3>About the tutor</h3>
-      </div>
+      <h3>About Me</h3>
       <div class="col-12 tutor-about-content">
         <h4>I graduated from Harvard Unversity.</h4>
       </div>
     </div>
     <hr>
     <div class="row">
-      <h3>TOPICS</h3>
+      <h3>Topics</h3>
       <div class="col-12" id="topics">
         <span class="topic">CAMPUS LIFE</span>
         <span class="topic">COURSE DETAILS</span>
@@ -72,8 +85,8 @@
     <hr>
     <div class="row">
       <h3>Schedule</h3>
-      <div class="col-12 date-options-tip">
-        Choose the time for your first session. The timings are displayed in your local time zone.
+      <div class="col-12 text-center" id="date-options-tip">
+        <h6>Choose the time for your first session. The timings are displayed in your local time zone.</h6>
       </div>
       <div class="col-12 date-options">
         <% @lesson_dates_options.reverse_each do |option| %>
@@ -85,23 +98,22 @@
 </div> <!-- .body-standalone -->
 
 <!-- Modal -->
-<div id="modal-confirm" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal content-->
+<%= link_to "Open modal", "#myModal", :class => "btn", "data-toggle" => "modal" %>
+<!-- Modal -->
+<div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Do you want to book a session at this time?</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel">Modal header</h3>
       </div>
       <div class="modal-body">
-        <p>hahahahaha</p>
+        <p>One fine body…</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+        <button class="btn btn-primary">Save changes</button>
       </div>
     </div>
-
   </div>
 </div>
-
