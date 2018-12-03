@@ -287,5 +287,5 @@ Devise.setup do |config|
   # ActiveSupport.on_load(:devise_failure_app) do
   #   include Turbolinks::Controller
   # end
-  config.omniauth :facebook, "2199873833557793", "547e4f4165ba4867b6517d0e275ea059", callback_url: "http://localhost:3000/users/auth/facebook/callback"
+  config.omniauth :facebook, "2199873833557793", "547e4f4165ba4867b6517d0e275ea059", callback_url: configatron.omniauth.facebook.callback_url
 end
